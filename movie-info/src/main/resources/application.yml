@@ -1,0 +1,10 @@
+server:
+  port: 3031
+
+spring:
+  application:
+    name: movie-info
+
+eureka:
+  instance:
+    hostname: localhost

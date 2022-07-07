@@ -1,0 +1,25 @@
+server:
+  port: 4040
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: movie-catalogue
+          uri: lb://movie-catalogue
+          predicates:
+            - Path=/usercatalog/**
+
+        - id: movie-info
+          uri: lb://movie-info
+          predicates:
+            - Path=/movieinfo/**
+
+
+eureka:
+  instance:
+    hostname: localhost
+
